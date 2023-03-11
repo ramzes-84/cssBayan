@@ -1,10 +1,15 @@
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  box-sizing: border-box;
-  margin: 0;
+    box-sizing: border-box;
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+h1 {
+    font-size: 1.2rem;
 }
 
 a {
@@ -14,11 +19,12 @@ a {
 .wrapper {
     min-height: 100vh;
     background-color: #f0f0f0;
+    padding: 0 30px;
 }
 
 .container {
-  max-width: 800px;
-  margin: 0 auto;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .header {
@@ -88,18 +94,6 @@ a {
     background-size: contain;
 }
 
-.accordion__item:hover {
-    height: 350px;
-}
-
-.accordion__item:target {
-    height: 350px;
-}
-
-.accordion__item:hover h3 {
-    color: #38b0f5;
-}
-
 .slice {
     display: flex;
     flex-direction: row;
@@ -119,12 +113,94 @@ a {
     transition: transform 0.3s ease-in-out;
 }
 
-.accordion__item:hover .accordion__icon {
-    transform: none;
-    transition: transform 0.3s ease-in-out;
-}
-
 .accordion__item:target .accordion__icon {
     transform: none;
     transition: transform 0.3s ease-in-out;
 }
+
+.accordion__item:target {
+    height: 70vw;
+}
+
+@media (min-width: 819px) {
+    body {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    h3 {
+        font-size: inherit;
+    }
+
+    .accordion__item:target {
+        height: 45vw;
+    }
+
+
+}
+
+@media (min-width: 1000px) {
+    .accordion__item:hover .accordion__icon {
+        transform: none;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .accordion:hover h3 {
+        color: red;
+    }
+
+    .accordion__item:hover h3 {
+        color: #38b0f5;
+    }
+
+    .accordion__item:hover {
+        height: 35vw;
+    }
+
+    body {
+        font-size: 1.2rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: inherit;
+    }
+
+    .accordion__item:target {
+        height: 35vw;
+    }
+
+    .accordion__item:active .accordion__memes  {
+        opacity: 0.33;
+        transform: rotate(360deg);
+        transition: transform 1s ease-in-out;
+    }
+
+    .accordion__icon {
+        visibility: hidden;
+    }
+
+    .accordion:hover .accordion__icon {
+        visibility: visible;
+    }
+
+
+}
+
+
+
+
+
+/* .first:not(:target) {
+    height: 350px;
+}
+
+.first:target {
+    height: 40px;
+} */
